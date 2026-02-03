@@ -98,6 +98,12 @@ ul{margin:0;padding:0;list-style:none}
 /* Footer */
 .site-footer{padding:2rem 0;border-top:1px solid rgba(255,255,255,0.03);text-align:center}
 
+/* Header social */
+.header-social{display:flex;gap:0.6rem;align-items:center}
+.header-social a{color:var(--muted);display:inline-flex;align-items:center}
+.header-social a:hover{color:var(--accent)}
+.header-social a svg{width:20px;height:20px;display:block;fill:currentColor}
+
 /* Reveal animations */
 .section{opacity:0;transform:translateY(12px);transition:opacity var(--transition),transform var(--transition)}
 .section--reveal{opacity:0;transform:translateY(12px)}
