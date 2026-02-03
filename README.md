@@ -112,3 +112,13 @@ Feel free to reach out to the developer community for help, feedback, and encour
 
 *Last Updated: January 26, 2026*
 *Version: 1.0 - HTML Only Foundation*
+
+## Quick Local Preview
+
+Open `index.html` in your browser. No build step required — files added:
+
+- `css/styles.css` — external stylesheet
+- `js/main.js` — small enhancements (smooth scroll, reveal)
+- `assets/images/*` — SVG placeholders for profile and projects
+
+Recommended: open the file from a simple static server for correct font loading (VS Code Live Server or `python -m http.server`).

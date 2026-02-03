@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800" role="img" aria-label="Profile placeholder">
+  <rect width="100%" height="100%" fill="#0b0b0f"/>
+  <g fill="#8b5cf6" opacity="0.12">
+    <circle cx="400" cy="300" r="220" />
+  </g>
+  <g fill="#ffffff" opacity="0.9">
+    <text x="50%" y="56%" font-family="Poppins, sans-serif" font-size="96" text-anchor="middle">SM</text>
+  </g>
+</svg>

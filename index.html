@@ -1,160 +1,224 @@
-<!-- Main portfolio file - Edit title, name, and content sections below -->
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Edit title with your name -->
-    <title>Shubhankar Mhelawat - Student Web Developer | MERN Stack Portfolio</title>
-    
-    <!-- Edit description -->
-    <meta name="description" content="Portfolio of a student web developer learning the MERN stack. Showcasing projects and skills in HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB.">
-    
-    <!-- Update keywords -->
-    <meta name="keywords" content="MERN, React, Node.js, MongoDB, Express, JavaScript, Web Developer, Portfolio">
-    
-    <!-- Link stylesheet here: <link rel="stylesheet" href="styles.css"> -->
-</head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Shubhanker Mehlawat — Front-End Developer</title>
+    <meta name="description" content="Shubhanker Mehlawat — Front-End Developer focused on building clean, responsive web interfaces." />
 
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- External stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
 <body>
-    <!-- Header - Introduction section -->
-    <header id="header">
-        <h1>Hi, I'm Shubhankar Mhelawat</h1>
-        <p>Student Web Developer | Learning MERN Stack</p>
-        <p>Passionate about building web applications with MongoDB, Express, React, and Node.js</p>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand">
+                <a href="#hero" class="brand-link">SM</a>
+            </div>
+            <nav class="site-nav" aria-label="Primary">
+                <ul class="nav__list">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#timeline">Journey</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <!-- Navigation menu - Links to sections below -->
-    <nav id="nav">
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <main id="main">
 
-    <!-- Main content area -->
-    <main>
-        
-        <!-- About section - Edit with your story -->
-        <section id="about">
-            <h2>About Me</h2>
-            <p>I'm a student web developer currently learning the MERN stack. I started with HTML and CSS fundamentals, and now I'm diving deeper into JavaScript, React, and backend development with Node.js and MongoDB.</p>
-            <p>My goal is to become a full-stack web developer and build real-world applications that solve actual problems. I believe in hands-on learning and am committed to continuously improving my skills.</p>
-            <!-- Optional: Add learning resource links -->
+        <!-- HERO -->
+        <section id="hero" class="hero">
+            <div class="container hero-inner">
+                <div class="hero-content">
+                    <p class="eyebrow">HELLO, I’M</p>
+                    <h1 class="hero-title">Shubhanker Mehlawat</h1>
+                    <p class="hero-role">Front-End Developer <span class="muted">|</span> <span class="accent">MERN Stack Learner</span></p>
+                    <p class="hero-line">Front-End Developer focused on building clean, responsive web interfaces with modern UI/UX principles.</p>
+
+                    <div class="hero-ctas">
+                        <a class="btn btn--primary" href="#timeline">View My Journey</a>
+                        <a class="btn" href="#projects">Projects</a>
+                    </div>
+                </div>
+
+                <div class="hero-media">
+                    <img src="assets/images/profile.svg" alt="Profile — Shubhanker Mehlawat" class="profile-img">
+                </div>
+            </div>
         </section>
 
-        <!-- Skills section - List skills you've actually used -->
-        <section id="skills">
-            <h2>Skills</h2>
-            
-            <h3>Frontend Development</h3>
-            <ul>
-                <li>HTML5 - Semantic markup and accessibility</li>
-                <li>CSS3 - Layout (Flexbox, Grid), Responsive design</li>
-                <li>JavaScript - ES6+, DOM manipulation, async/await</li>
-                <li>React - Components, Props, State, Hooks (useState, useEffect)</li>
-            </ul>
+        <!-- TIMELINE / EDUCATION -->
+        <section id="timeline" class="section section--reveal">
+            <div class="container">
+                <h2 class="section-title">Education & Study</h2>
+                <div class="timeline">
+                    <div class="timeline-line" aria-hidden="true"></div>
 
-            <h3>Backend Development</h3>
-            <ul>
-                <li>Node.js - Creating server environments</li>
-                <li>Express.js - Building REST APIs and server routes</li>
-                <li>MongoDB - Database design and basic queries</li>
-            </ul>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card card">
+                            <time class="muted">2017–2020</time>
+                            <h3>Bachelor in Computer Science</h3>
+                            <p class="muted">USMS, GGSIPU — Foundation in CS fundamentals and algorithms.</p>
+                        </div>
+                    </div>
 
-            <h3>Developer Tools & Soft Skills</h3>
-            <ul>
-                <li>Git & GitHub - Version control and collaboration</li>
-                <li>VS Code - Code editor and debugging</li>
-                <li>Terminal/Command Line - Navigation and basic commands</li>
-                <li>Problem-solving - Debugging and research skills</li>
-            </ul>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card card">
+                            <time class="muted">2022</time>
+                            <h3>Master in Video Editing & Motion Graphics</h3>
+                            <p class="muted">Techstack Academy — Creative workflows and motion design.</p>
+                        </div>
+                    </div>
 
-            <!-- Update as you learn new skills -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card card">
+                            <time class="muted">2025–Present</time>
+                            <h3>MCA</h3>
+                            <p class="muted">Chandigarh University — Ongoing advanced studies.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </section>
 
-        <!-- Projects section - Your portfolio showcase -->
-        <section id="projects">
-            <h2>Projects</h2>
-            <p>Here are some projects I've built while learning web development. Each project helped me master new concepts and technologies:</p>
-
-            <!-- Project 1 - Copy this block to add more projects -->
-            <article>
-                <h3>HTML Portfolio Website</h3>
-                <p><strong>Description:</strong> My first portfolio built with pure HTML and semantic markup. This project taught me about proper page structure, accessibility, and how to organize content semantically.</p>
-                <p><strong>Skills Used:</strong> HTML5, Semantic HTML, Accessibility (a11y), Page structure</p>
-                <p><strong>Key Learnings:</strong> Understood how to use proper semantic tags like &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;article&gt;, &lt;section&gt;, and &lt;footer&gt;.</p>
-                <p><strong>Status:</strong> Completed</p>
-                <!-- Add GitHub & live demo links when ready -->
-            </article>
-
-            <!-- Project 2 -->
-            <article>
-                <h3>JavaScript Calculator</h3>
-                <p><strong>Description:</strong> A simple calculator application built with HTML, CSS, and JavaScript. This project helped me practice JavaScript fundamentals including functions, event handling, and DOM manipulation.</p>
-                <p><strong>Skills Used:</strong> HTML5, CSS3 (Styling and layout), JavaScript (Functions, Event Listeners, DOM Manipulation, Basic math operations)</p>
-                <p><strong>Key Learnings:</strong> Learned how to attach event listeners to buttons, perform calculations, update the DOM in real-time, and handle user interactions.</p>
-                <p><strong>Status:</strong> Completed</p>
-                <!-- Add GitHub & live demo links when ready -->
-            </article>
-
-            <!-- Project 3 -->
-            <article>
-                <h3>React Todo App</h3>
-                <p><strong>Description:</strong> A todo application built with React. This was my first major React project where I learned about component structure, state management with hooks, and how to build interactive user interfaces.</p>
-                <p><strong>Skills Used:</strong> React (Functional Components, Hooks - useState/useEffect), JavaScript ES6+, CSS for styling, Component composition</p>
-                <p><strong>Key Learnings:</strong> Understood React component lifecycle, state management, how to lift state up, and the importance of re-rendering optimization.</p>
-                <p><strong>Status:</strong> Completed</p>
-                <!-- Add GitHub & live demo links when ready -->
-            </article>
-
-            <!-- Project 4 - Coming Soon -->
-            <article>
-                <h3>Full MERN Blog Application (Coming Soon)</h3>
-                <p><strong>Description:</strong> My first full-stack MERN project combining all learned technologies. This will include a React frontend, Express backend, MongoDB database, and full CRUD operations.</p>
-                <p><strong>Skills Used:</strong> React (Frontend), Node.js & Express (Backend), MongoDB (Database), REST APIs</p>
-                <p><strong>Key Learnings (Planned):</strong> Will learn full-stack development, API communication, database design, and deployment.</p>
-                <p><strong>Status:</strong> In Development / Planned</p>
-                <!-- Add GitHub & live demo links when deployed -->
-            </article>
-
-            <!-- Copy any project block above to add more -->
-
+        <!-- EXPERIENCE HIGHLIGHTS -->
+        <section class="section section--reveal">
+            <div class="container">
+                <h2 class="section-title">Experience</h2>
+                <div class="grid grid--2">
+                    <div class="card">
+                        <h3>Frontend Developer</h3>
+                        <p class="muted">PiHex Labs — Dec 2024 – Present</p>
+                    </div>
+                    <div class="card">
+                        <h3>Freelance Web Developer</h3>
+                        <p class="muted">PiHex Labs — Feb 2023 – Nov 2024</p>
+                    </div>
+                    <div class="card">
+                        <h3>Video Editor</h3>
+                        <p class="muted">Asiana Times — Jul 2022 – Aug 2022</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- Contact section - How to reach you -->
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <p>I'm open to opportunities, feedback, and connecting with other developers. Feel free to reach out!</p>
+        <!-- SKILLS -->
+        <section id="skills" class="section section--reveal">
+            <div class="container">
+                <h2 class="section-title">Skills</h2>
 
-            <h3>Ways to Connect:</h3>
-            <ul>
-                <!-- Edit email address -->
-                <li><strong>Email:</strong> <a href="mailto:shubh.mehlawat8@gmail.com">shubh.mehlawat8@gmail.com</a></li>
-                
-                <!-- Edit GitHub username -->
-                <li><strong>GitHub:</strong> <a href="https://github.com/ishubhsaga">github.com/ishubhsaga</a></li>
-                
-                <!-- Edit LinkedIn profile -->
-                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/shubhankar-meh/">linkedin.com/in/shubhankar-meh/</a></li>
-            </ul>
+                <div class="skills-grid">
+                    <div class="card skill-group">
+                        <h3>Frontend</h3>
+                        <ul class="skill-list">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>React</li>
+                        </ul>
+                    </div>
 
-            <!-- Optional: Add contact form using Formspree, Netlify Forms, or EmailJS -->
+                    <div class="card skill-group">
+                        <h3>Design & UX</h3>
+                        <ul class="skill-list">
+                            <li>UI/UX Principles</li>
+                            <li>Responsive Web Design</li>
+                        </ul>
+                    </div>
+
+                    <div class="card skill-group">
+                        <h3>Creative</h3>
+                        <ul class="skill-list">
+                            <li>Video Editing</li>
+                            <li>Motion Graphics</li>
+                        </ul>
+                    </div>
+
+                    <div class="card skill-group">
+                        <h3>Professional</h3>
+                        <ul class="skill-list">
+                            <li>Problem Solving</li>
+                            <li>Communication</li>
+                            <li>Time Management</li>
+                            <li>Adaptability</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="section section--reveal">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <p class="muted">A selection of work demonstrating problem solving and front-end craft.</p>
+
+                <div class="projects-grid">
+                    <article class="project-card card">
+                        <img src="assets/images/project-1.svg" alt="Project 1 thumbnail" class="project-thumb">
+                        <h3>HTML Portfolio Website</h3>
+                        <p class="muted">Simple, semantic portfolio showcasing structure and accessibility.</p>
+                        <div class="tags">HTML • Accessibility</div>
+                        <div class="project-actions">
+                            <a class="btn" href="#" aria-label="GitHub">GitHub</a>
+                            <a class="btn btn--primary" href="#" aria-label="Live demo">Live Demo</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card card">
+                        <img src="assets/images/project-2.svg" alt="Project 2 thumbnail" class="project-thumb">
+                        <h3>JavaScript Calculator</h3>
+                        <p class="muted">Practice in DOM manipulation and event handling.</p>
+                        <div class="tags">JavaScript • DOM</div>
+                        <div class="project-actions">
+                            <a class="btn" href="#">GitHub</a>
+                            <a class="btn btn--primary" href="#">Live Demo</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card card">
+                        <img src="assets/images/project-3.svg" alt="Project 3 thumbnail" class="project-thumb">
+                        <h3>React Todo App</h3>
+                        <p class="muted">React hooks, state management, and component composition.</p>
+                        <div class="tags">React • Hooks</div>
+                        <div class="project-actions">
+                            <a class="btn" href="#">GitHub</a>
+                            <a class="btn btn--primary" href="#">Live Demo</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section section--reveal">
+            <div class="container contact-inner">
+                <h2 class="section-title">Let’s work together</h2>
+                <p class="muted">I'm open to opportunities and collaborations — feel free to reach out by email.</p>
+                <a class="btn btn--primary" href="mailto:shubh.mehlawat8@gmail.com">Email Me</a>
+            </div>
         </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Shubhankar Mhelawat. All rights reserved. | Still learning, always growing!</p>
-        <!-- Optional: Add footer links (Privacy, Terms, etc.) -->
+    <footer class="site-footer">
+        <div class="container">
+            <p class="muted">© 2026 Shubhanker Mehlawat</p>
+        </div>
     </footer>
 
-    <!-- Link JavaScript here: <script src="script.js"></script> -->
-
+    <script src="js/main.js" defer></script>
 </body>
 </html>
