@@ -42,7 +42,7 @@ ul{margin:0;padding:0;list-style:none}
 .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:1.2rem;border-radius:var(--radius);box-shadow:0 4px 18px rgba(3,3,8,0.6)}
 
 /* Header / nav */
-.site-header{position:sticky;top:0;background:transparent;padding:0.6rem 0;z-index:50}
+.site-header{position:sticky;top:0;background:linear-gradient(180deg,rgba(5,5,7,0.95),rgba(5,5,7,0.8));backdrop-filter:blur(2px);padding:0.6rem 0;z-index:50;box-shadow:0 1px 3px rgba(0,0,0,0.2)}
 .header-inner{display:flex;align-items:center;justify-content:space-between}
 .brand-link{font-family:Poppins,Inter,system-ui;font-weight:700;color:var(--text);letter-spacing:0.5px}
 .site-nav .nav__list{display:flex;gap:1rem}
