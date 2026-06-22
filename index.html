@@ -1,245 +1,456 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Shubhanker Mhelawat | Front-End Developer</title>
-    <meta name="description" content="Front-End developer focused on UI/UX, responsive design, and modern web interfaces." />
-    <meta name="author" content="Shubhanker Mhelawat" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shubhanker Mhelawat | Front-End Developer</title>
+  <meta name="description" content="Front-End developer focused on UI/UX, responsive design, and modern web interfaces." />
+  <meta name="author" content="Shubhanker Mhelawat" />
+  <meta property="og:title" content="Shubhanker Mhelawat | Front-End Developer" />
+  <meta property="og:description" content="Front-End developer focused on UI/UX, responsive design, and modern web interfaces." />
+  <meta property="og:type" content="website" />
 
-    <!-- Open Graph (for LinkedIn / social previews) -->
-    <meta property="og:title" content="Shubhanker Mhelawat | Front-End Developer" />
-    <meta property="og:description" content="Front-End developer focused on UI/UX, responsive design, and modern web interfaces." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://ishubhsaga.github.io/my-portfolio/" />
-    <meta property="og:image" content="https://ishubhsaga.github.io/my-portfolio/assets/images/profile.svg" />
-    <meta property="og:site_name" content="Shubhanker Mhelawat" />
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-
-    <!-- External stylesheet -->
-    <link rel="stylesheet" href="css/styles.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header">
-        <div class="container header-inner">
-            <div class="brand">
-                <a href="#hero" class="brand-link">SM</a>
-            </div>
-            <nav class="site-nav" aria-label="Primary">
-                <ul class="nav__list">
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#timeline">Journey</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="header-social" aria-hidden="false">
-                <a href="https://github.com/ishubhsaga" aria-label="GitHub" target="_blank" rel="noopener">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
-                        <path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.12 3.29 9.46 7.86 10.99.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.1-3.2.69-3.88-1.54-3.88-1.54-.52-1.32-1.28-1.67-1.28-1.67-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.71 1.25 3.37.96.11-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.07 11.07 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.5 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.25 5.68.41.35.78 1.04.78 2.1 0 1.52-.02 2.75-.02 3.12 0 .3.2.66.79.55C20.71 21.47 24 17.13 24 12.02 24 5.74 18.27.5 12 .5z" />
-                    </svg>
-                </a>
-                <a href="https://linkedin.com/in/shubhankar-meh/" aria-label="LinkedIn" target="_blank" rel="noopener">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.026-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.941v5.665H9.349V9h3.414v1.561h.049c.477-.9 1.637-1.852 3.37-1.852 3.602 0 4.267 2.37 4.267 5.456v6.287zM5.337 7.433a2.065 2.065 0 1 1 0-4.13 2.065 2.065 0 0 1 0 4.13zM6.884 20.452H3.789V9h3.095v11.452z" />
-                    </svg>
-                </a>
-            </div>
+  <!-- Preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__curtains">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="preloader__name">Shubhanker&nbsp;Mhelawat</div>
+  </div>
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- HEADER / NAV -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#hero" class="brand-link" aria-label="Home">
+        <img src="assets/images/profile.jpg" alt="" class="brand-img">
+        <span class="brand-name">SM</span>
+      </a>
+
+      <!-- Hamburger for mobile -->
+      <button class="nav-burger" id="navBurger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navList">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" aria-label="Primary" id="siteNav">
+        <ul class="nav__list" id="navList">
+          <span class="nav__ink" id="navInk" aria-hidden="true"></span>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#timeline">Education</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="assets/resume.pdf" target="_blank" rel="noopener" class="btn btn--primary btn--sm">Resume ↓</a>
+        <div class="header-social" aria-label="Social links">
+          <a href="https://github.com/ishubhsaga" aria-label="GitHub" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.12 3.29 9.46 7.86 10.99.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.1-3.2.69-3.88-1.54-3.88-1.54-.52-1.32-1.28-1.67-1.28-1.67-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.71 1.25 3.37.96.11-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.07 11.07 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.5 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.25 5.68.41.35.78 1.04.78 2.1 0 1.52-.02 2.75-.02 3.12 0 .3.2.66.79.55C20.71 21.47 24 17.13 24 12.02 24 5.74 18.27.5 12 .5z"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/shubhankar-meh/" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.026-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.941v5.665H9.349V9h3.414v1.561h.049c.477-.9 1.637-1.852 3.37-1.852 3.602 0 4.267 2.37 4.267 5.456v6.287zM5.337 7.433a2.065 2.065 0 1 1 0-4.13 2.065 2.065 0 0 1 0 4.13zM6.884 20.452H3.789V9h3.095v11.452z"/></svg>
+          </a>
         </div>
-    </header>
+      </div>
+    </div>
+  </header>
 
-    <main id="main">
+  <!-- Mobile nav overlay -->
+  <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
 
-        <!-- HERO -->
-        <section id="hero" class="hero">
-            <div class="container hero-inner">
-                <div class="hero-content">
-                    <p class="eyebrow">HELLO, I’M</p>
-                    <h1 class="hero-title">Shubhanker Mhelawat</h1>
-                    <p class="hero-role">Front-End Developer <span class="muted">|</span> <span class="accent">MERN Stack Learner</span></p>
-                    <p class="hero-line">Front-End Developer focused on building clean, responsive, user-first web experiences.</p>
+  <main id="main">
 
-                    <div class="hero-ctas">
-                        <a class="btn btn--primary" href="#timeline">View My Journey</a>
-                        <a class="btn" href="#projects">Projects</a>
-                    </div>
-                </div>
-
-                <div class="hero-media">
-                    <img src="assets/images/profile.svg" alt="Profile — Shubhanker Mhelawat" class="profile-img">
-                </div>
-            </div>
-        </section>
-
-        <!-- TIMELINE / EDUCATION -->
-        <section id="timeline" class="section section--reveal">
-            <div class="container">
-                <h2 class="section-title">Education & Study</h2>
-                <div class="timeline">
-                    <div class="timeline-line" aria-hidden="true"></div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-card card">
-                            <time class="muted">2017–2020</time>
-                            <h3>Bachelor in Computer Science</h3>
-                            <p class="muted">USMS, GGSIPU — Foundation in CS fundamentals and algorithms.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-card card">
-                            <time class="muted">2022</time>
-                            <h3>Master in Video Editing & Motion Graphics</h3>
-                            <p class="muted">Techstack Academy — Creative workflows and motion design.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-card card">
-                            <time class="muted">2025–Present</time>
-                            <h3>MCA</h3>
-                            <p class="muted">Chandigarh University — Ongoing advanced studies.</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- EXPERIENCE HIGHLIGHTS -->
-        <section class="section section--reveal">
-            <div class="container">
-                <h2 class="section-title">Experience</h2>
-                <div class="grid grid--2">
-                    <div class="card">
-                        <h3>Frontend Developer</h3>
-                        <p class="muted">PiHex Labs — Dec 2024 – Present</p>
-                    </div>
-                    <div class="card">
-                        <h3>Freelance Web Developer</h3>
-                        <p class="muted">PiHex Labs — Feb 2023 – Nov 2024</p>
-                    </div>
-                    <div class="card">
-                        <h3>Video Editor</h3>
-                        <p class="muted">Asiana Times — Jul 2022 – Aug 2022</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SKILLS -->
-        <section id="skills" class="section section--reveal">
-            <div class="container">
-                <h2 class="section-title">Skills</h2>
-
-                <div class="skills-grid">
-                    <div class="card skill-group">
-                        <h3>Frontend</h3>
-                        <ul class="skill-list">
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                            <li>React</li>
-                        </ul>
-                    </div>
-
-                    <div class="card skill-group">
-                        <h3>Design & UX</h3>
-                        <ul class="skill-list">
-                            <li>UI/UX Principles</li>
-                            <li>Responsive Web Design</li>
-                        </ul>
-                    </div>
-
-                    <div class="card skill-group">
-                        <h3>Creative</h3>
-                        <ul class="skill-list">
-                            <li>Video Editing</li>
-                            <li>Motion Graphics</li>
-                        </ul>
-                    </div>
-
-                    <div class="card skill-group">
-                        <h3>Professional</h3>
-                        <ul class="skill-list">
-                            <li>Problem Solving</li>
-                            <li>Communication</li>
-                            <li>Time Management</li>
-                            <li>Adaptability</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PROJECTS -->
-        <section id="projects" class="section section--reveal">
-            <div class="container">
-                <h2 class="section-title">Projects</h2>
-                <p class="muted">A selection of work demonstrating problem solving and front-end craft.</p>
-
-                <div class="projects-grid">
-                    <article class="project-card card">
-                        <img src="assets/images/project-1.svg" alt="Project 1 thumbnail" class="project-thumb">
-                        <h3>HTML Portfolio Website</h3>
-                        <p class="muted">Simple, semantic portfolio showcasing structure and accessibility.</p>
-                        <div class="tags">HTML • Accessibility</div>
-                        <div class="project-actions">
-                            <a class="btn" href="#" aria-label="GitHub">GitHub</a>
-                            <a class="btn btn--primary" href="#" aria-label="Live demo">Live Demo</a>
-                        </div>
-                    </article>
-
-                    <article class="project-card card">
-                        <img src="assets/images/project-2.svg" alt="Project 2 thumbnail" class="project-thumb">
-                        <h3>JavaScript Calculator</h3>
-                        <p class="muted">Practice in DOM manipulation and event handling.</p>
-                        <div class="tags">JavaScript • DOM</div>
-                        <div class="project-actions">
-                            <a class="btn" href="#">GitHub</a>
-                            <a class="btn btn--primary" href="#">Live Demo</a>
-                        </div>
-                    </article>
-
-                    <article class="project-card card">
-                        <img src="assets/images/project-3.svg" alt="Project 3 thumbnail" class="project-thumb">
-                        <h3>React Todo App</h3>
-                        <p class="muted">React hooks, state management, and component composition.</p>
-                        <div class="tags">React • Hooks</div>
-                        <div class="project-actions">
-                            <a class="btn" href="#">GitHub</a>
-                            <a class="btn btn--primary" href="#">Live Demo</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section id="contact" class="section section--reveal">
-            <div class="container contact-inner">
-                <h2 class="section-title">Let’s work together</h2>
-                <p class="muted">I'm open to opportunities and collaborations — feel free to reach out by email.</p>
-                <a class="btn btn--primary" href="mailto:shubh.mhelawat8@gmail.com">Email Me</a>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <p class="muted">© 2026 Shubhanker Mhelawat</p>
+    <!-- ============ HERO ============ -->
+    <section id="hero" class="hero">
+      <span class="hero-spotlight" id="heroSpotlight" aria-hidden="true"></span>
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <p class="terminal-line" aria-live="polite">
+            <span class="terminal-prompt">&gt;</span>
+            <span class="terminal-text" id="terminal-text"></span>
+            <span class="terminal-cursor" aria-hidden="true">_</span>
+          </p>
+          <p class="eyebrow">HELLO, I'M</p>
+          <h1 class="hero-title">Shubhanker<br>Mhelawat</h1>
+          <p class="hero-role">Front-End Developer <span class="muted-bar">|</span> <span class="accent">React &amp; TypeScript</span></p>
+          <p class="hero-line">
+            Building <span class="hero-rotator" aria-live="polite">
+              <span class="rotator-word" id="rotatorWord">AI medical imaging tools</span><b class="rotator-caret" aria-hidden="true"></b>
+            </span>
+          </p>
+          <div class="hero-ctas">
+            <a class="btn btn--primary" href="#projects">View Projects</a>
+            <a class="btn btn--ghost" href="#contact">Get In Touch</a>
+          </div>
+          <ul class="hero-social">
+            <li><a href="https://github.com/ishubhsaga" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.12 3.29 9.46 7.86 10.99.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.1-3.2.69-3.88-1.54-3.88-1.54-.52-1.32-1.28-1.67-1.28-1.67-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.71 1.25 3.37.96.11-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.07 11.07 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.5 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.25 5.68.41.35.78 1.04.78 2.1 0 1.52-.02 2.75-.02 3.12 0 .3.2.66.79.55C20.71 21.47 24 17.13 24 12.02 24 5.74 18.27.5 12 .5z"/></svg>
+            </a></li>
+            <li><a href="https://linkedin.com/in/shubhankar-meh/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.026-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.941v5.665H9.349V9h3.414v1.561h.049c.477-.9 1.637-1.852 3.37-1.852 3.602 0 4.267 2.37 4.267 5.456v6.287zM5.337 7.433a2.065 2.065 0 1 1 0-4.13 2.065 2.065 0 0 1 0 4.13zM6.884 20.452H3.789V9h3.095v11.452z"/></svg>
+            </a></li>
+            <li><a href="https://mail.google.com/mail/?view=cm&to=shubh.mehlawat8@gmail.com" target="_blank" rel="noopener" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M3.5 6.5l8.5 7 8.5-7"/></svg>
+            </a></li>
+          </ul>
         </div>
-    </footer>
 
-    <script src="js/main.js" defer></script>
+        <div class="hero-media">
+          <div class="photo-stage">
+            <span class="photo-blob" aria-hidden="true"></span>
+            <div class="photo-frame">
+              <img src="assets/images/profile.jpg" alt="Portrait — Shubhanker Mhelawat" class="profile-img" loading="eager">
+            </div>
+            <span class="photo-tag photo-tag--1" aria-hidden="true">&lt;/&gt; frontend</span>
+            <span class="photo-tag photo-tag--2" aria-hidden="true">✦ AI imaging UI</span>
+            <span class="photo-tag photo-tag--3" aria-hidden="true">◐ motion design</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="hero-scroll-cue" id="heroScrollCue" aria-label="Scroll to about">
+        <span class="scroll-cue__label">scroll</span>
+        <span class="scroll-cue__mouse"><span class="scroll-cue__wheel"></span></span>
+      </a>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="stats" aria-label="At a glance">
+      <div class="container stats-grid">
+        <div class="stat">
+          <span class="stat__num" data-count="2" data-suffix="+">0</span>
+          <span class="stat__label">Years building</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="4">0</span>
+          <span class="stat__label">Projects shipped</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="1">0</span>
+          <span class="stat__label">Open-source contribution</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="1">0</span>
+          <span class="stat__label">Certification</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section section--reveal">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-index">01</span>
+          <h2 class="section-title">About</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-media" data-reveal>
+            <div class="about-stage">
+              <span class="about-blob" aria-hidden="true"></span>
+              <div class="about-frame">
+                <img src="assets/images/profile.jpg" alt="Shubhanker Mhelawat" loading="lazy">
+              </div>
+              <span class="about-tag about-tag--1" aria-hidden="true"><b>&lt;/&gt;</b> frontend</span>
+              <span class="about-tag about-tag--2" aria-hidden="true"><b>✦</b> AI UI</span>
+              <span class="about-tag about-tag--3" aria-hidden="true"><b>◐</b> motion</span>
+            </div>
+          </div>
+          <div class="about-body">
+            <p data-reveal>I'm a front-end developer based in <strong>Delhi</strong>, currently building product UI at <strong>PiHex Labs</strong> and completing my MCA at Chandigarh University. My recent work centres on an AI-assisted medical imaging tool — building the slide viewer and result overlays clinicians actually interact with — alongside contributions to <a href="https://github.com/niivue/niivue" target="_blank" rel="noopener">NiiVue</a>, an open-source WebGL medical imaging viewer.</p>
+            <p data-reveal class="muted-text">Outside of product work, I care about interfaces that stay out of the way: fast, accessible, and easy to trust. I'm comfortable across the modern front-end stack — React, Next.js, TypeScript, Tailwind — and I bring a background in video editing and motion design to how I think about animation and visual polish.</p>
+            <ul class="about-facts" data-reveal>
+              <li><span>Location</span>Delhi, India</li>
+              <li><span>Role</span>Front-End Developer</li>
+              <li><span>Stack</span>React · TypeScript · Next.js</li>
+              <li><span>Email</span><a href="mailto:shubh.mehlawat8@gmail.com">shubh.mehlawat8@gmail.com</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section id="experience" class="section section--alt section--reveal">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-index">02</span>
+          <h2 class="section-title">Experience</h2>
+        </div>
+        <div class="tl-wrap">
+          <span class="tl-spine" aria-hidden="true"></span>
+
+          <article class="tl-item card" data-reveal>
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-top">
+              <h3 class="tl-role">Frontend Developer</h3>
+              <span class="tl-date">Dec 2024 — Present</span>
+            </div>
+            <p class="tl-org">PiHex Labs <span class="tl-loc">· Remote · Dublin, Ireland</span></p>
+            <ul class="tl-list">
+              <li>Built the frontend for an AI medical imaging app (TypeScript, Vite) with an interactive slide viewer and AI result overlays used by clinicians.</li>
+              <li>Contributed UI controls — brightness, contrast, slice navigation — to <a href="https://github.com/niivue/niivue" target="_blank" rel="noopener">NiiVue</a> open-source WebGL viewer. Fixed canvas layering and rendering bugs (PRs #1334, #1356).</li>
+              <li>Built a corporate website with Next.js, Tailwind CSS, and Framer Motion. Created "Project Foundry", an internal tool for managing project specs with standardized templates.</li>
+            </ul>
+          </article>
+
+          <article class="tl-item card" data-reveal>
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-top">
+              <h3 class="tl-role">Freelance Web Developer</h3>
+              <span class="tl-date">Feb 2023 — Nov 2024</span>
+            </div>
+            <p class="tl-org">Freelance <span class="tl-loc">· Remote</span></p>
+            <ul class="tl-list">
+              <li>Turned designer mockups into responsive, cross-browser websites for clients.</li>
+              <li>Built reusable React components — navbars, modals, forms — reused across multiple projects.</li>
+            </ul>
+          </article>
+
+          <article class="tl-item card" data-reveal>
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-top">
+              <h3 class="tl-role">Video Editor</h3>
+              <span class="tl-date">Jul 2022 — Aug 2022</span>
+            </div>
+            <p class="tl-org">Asiana Times <span class="tl-loc">· Delhi</span></p>
+            <ul class="tl-list">
+              <li>Edited video content and motion graphics for a media outlet — sharpened an eye for pacing and visual polish that now shows up in interface animation work.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section id="timeline" class="section section--reveal">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-index">03</span>
+          <h2 class="section-title">Education &amp; Certifications</h2>
+        </div>
+        <div class="tl-wrap">
+          <span class="tl-spine" aria-hidden="true"></span>
+
+          <article class="tl-item card" data-reveal>
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-top">
+              <h3 class="tl-role">Master of Computer Applications (MCA)</h3>
+              <span class="tl-date">Jan 2025</span>
+            </div>
+            <p class="tl-org">Chandigarh University</p>
+          </article>
+
+          <article class="tl-item card" data-reveal>
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-top">
+              <h3 class="tl-role">Master in Video Editing &amp; Motion Graphics</h3>
+              <span class="tl-date">2022</span>
+            </div>
+            <p class="tl-org">Techstack Academy</p>
+          </article>
+
+          <article class="tl-item card" data-reveal>
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-top">
+              <h3 class="tl-role">Bachelor in Computer Applications</h3>
+              <span class="tl-date">2017 — 2020</span>
+            </div>
+            <p class="tl-org">USMS, GGSIPU — CS fundamentals &amp; algorithms.</p>
+          </article>
+
+          <article class="tl-item card" data-reveal>
+            <div class="tl-dot tl-dot--cert" aria-hidden="true"></div>
+            <div class="tl-top">
+              <h3 class="tl-role">Prompt Design in Vertex AI</h3>
+              <span class="tl-date">May 2025</span>
+            </div>
+            <p class="tl-org">Google Cloud — Verified certification.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="section section--alt section--reveal">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-index">04</span>
+          <h2 class="section-title">Skills</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="card skill-group" data-reveal>
+            <h3>Frontend</h3>
+            <ul class="skill-chips">
+              <li>HTML5 &amp; CSS3</li>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>React</li>
+              <li>Next.js</li>
+              <li>Tailwind CSS</li>
+              <li>Framer Motion</li>
+            </ul>
+          </div>
+          <div class="card skill-group" data-reveal>
+            <h3>Design &amp; UX</h3>
+            <ul class="skill-chips">
+              <li>UI/UX Principles</li>
+              <li>Responsive Design</li>
+              <li>Figma</li>
+            </ul>
+          </div>
+          <div class="card skill-group" data-reveal>
+            <h3>Creative</h3>
+            <ul class="skill-chips">
+              <li>Video Editing</li>
+              <li>Motion Graphics</li>
+            </ul>
+          </div>
+          <div class="card skill-group" data-reveal>
+            <h3>Professional</h3>
+            <ul class="skill-chips">
+              <li>Problem Solving</li>
+              <li>Communication</li>
+              <li>Time Management</li>
+              <li>Adaptability</li>
+            </ul>
+          </div>
+          <div class="card skill-group" data-reveal>
+            <h3>Languages</h3>
+            <ul class="skill-chips">
+              <li>English — Professional</li>
+              <li>Hindi — Native</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="section section--reveal">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-index">05</span>
+          <h2 class="section-title">Projects</h2>
+        </div>
+        <p class="section-sub muted-text" data-reveal>Product work from PiHex Labs, an open-source contribution, and projects built to learn.</p>
+        <div class="projects-grid">
+
+          <article class="project-card card" data-reveal>
+            <div class="proj-header">
+              <h3>Agentic Cervical Screener</h3>
+              <span class="badge badge--org">PiHex Labs</span>
+            </div>
+            <p class="muted-text">AI-assisted medical imaging app for cervical screening. Built the interactive slide viewer with AI result overlays used by clinicians for image review and navigation.</p>
+            <div class="proj-tags">
+              <span>TypeScript</span><span>Vite</span><span>Medical Imaging</span>
+            </div>
+            <div class="proj-actions">
+              <span class="btn btn--disabled" aria-disabled="true">Proprietary — Private</span>
+            </div>
+          </article>
+
+          <article class="project-card card" data-reveal>
+            <div class="proj-header">
+              <h3>NiiVue Contributions</h3>
+              <span class="badge badge--oss">Open Source</span>
+            </div>
+            <p class="muted-text">Contributed UI controls for brightness, contrast, and slice navigation to NiiVue, an open-source medical imaging viewer. Fixed canvas layering and rendering bugs.</p>
+            <div class="proj-tags">
+              <span>JavaScript</span><span>Canvas</span><span>WebGL</span>
+            </div>
+            <div class="proj-actions">
+              <a class="btn btn--ghost" href="https://github.com/niivue/niivue" target="_blank" rel="noopener">View Project</a>
+            </div>
+          </article>
+
+          <article class="project-card card" data-reveal>
+            <img src="assets/images/fitness ai.png" alt="Fitness AI thumbnail" class="project-thumb" loading="lazy">
+            <div class="proj-header">
+              <h3>Fitness AI Platform</h3>
+              <span class="badge badge--wip">In Progress</span>
+            </div>
+            <p class="muted-text">A multi-page fitness app UI with home, trainer, form, and nutrition pages. Clean HTML5 forms for height, weight, goals, and diet preference.</p>
+            <div class="proj-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+            <div class="proj-actions">
+              <a class="btn btn--ghost" href="https://github.com/ishubhsaga/fitness-AI" target="_blank" rel="noopener">View Code</a>
+            </div>
+          </article>
+
+          <article class="project-card card" data-reveal>
+            <div class="proj-header">
+              <h3>Personal Portfolio</h3>
+              <span class="badge badge--live">Live</span>
+            </div>
+            <p class="muted-text">This site — a responsive single-page portfolio with smooth scroll and reveal animations, built with vanilla HTML, CSS, and JavaScript.</p>
+            <div class="proj-tags">
+              <span>HTML</span><span>CSS</span><span>Vanilla JS</span>
+            </div>
+            <div class="proj-actions">
+              <a class="btn btn--ghost" href="https://github.com/ishubhsaga/my-portfolio" target="_blank" rel="noopener">GitHub</a>
+              <a class="btn btn--primary" href="https://ishubhsaga.github.io/my-portfolio/" target="_blank" rel="noopener">Live Demo</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section section--alt section--reveal">
+      <div class="container contact-inner">
+        <div class="section-head" data-reveal>
+          <span class="section-index">06</span>
+          <h2 class="section-title">Let's work together</h2>
+        </div>
+        <p class="muted-text contact-sub" data-reveal>I'm open to opportunities and collaborations — feel free to reach out.</p>
+
+        <a href="https://mail.google.com/mail/?view=cm&to=shubh.mehlawat8@gmail.com" target="_blank" rel="noopener" class="contact-card card" data-reveal aria-label="Email shubh.mehlawat8@gmail.com">
+          <div class="contact-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="28" height="28" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M3.5 6.5l8.5 7 8.5-7"/></svg>
+          </div>
+          <div class="contact-card__body">
+            <span class="contact-card__label">Email me directly</span>
+            <span class="contact-card__address">shubh.mehlawat8@gmail.com</span>
+          </div>
+          <div class="contact-card__arrow" aria-hidden="true">→</div>
+        </a>
+
+        <div class="contact-links" data-reveal>
+          <a href="https://github.com/ishubhsaga" target="_blank" rel="noopener" class="btn btn--ghost">GitHub</a>
+          <a href="https://linkedin.com/in/shubhankar-meh/" target="_blank" rel="noopener" class="btn btn--ghost">LinkedIn</a>
+          <a href="https://mail.google.com/mail/?view=cm&to=shubh.mehlawat8@gmail.com" target="_blank" rel="noopener" class="btn btn--primary">Email Me</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="muted-text">© 2026 Shubhanker Mhelawat</p>
+      <div class="footer-links">
+        <a href="https://github.com/ishubhsaga" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+        <a href="https://linkedin.com/in/shubhankar-meh/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
 </body>
 </html>
