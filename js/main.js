@@ -208,7 +208,98 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ------------------------------------------------------------------
-     Smooth scroll for in-page links
+     Lenis smooth scroll (same library Sumit uses)
+     Falls back gracefully if Lenis hasn't loaded yet
+  ------------------------------------------------------------------ */
+  let lenis = null;
+
+  const initLenis = () => {
+    if (typeof Lenis === 'undefined') return;
+    lenis = new Lenis({
+      duration: 1.4,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true,
+    });
+    const raf = (time) => { lenis.raf(time); requestAnimationFrame(raf); };
+    requestAnimationFrame(raf);
+    // Let GSAP ScrollTrigger know about Lenis
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => lenis.raf(time * 1000));
+      gsap.ticker.lagSmoothing(0);
+    }
+  };
+
+  // Wait for scripts to load then init
+  window.addEventListener('load', initLenis);
+  // Also try immediately in case already loaded
+  if (document.readyState === 'complete') initLenis();
+
+  /* ------------------------------------------------------------------
+     Curtain transition — fires when a nav link is clicked
+     Two vertical bars sweep down then up, revealing the new section
+  ------------------------------------------------------------------ */
+  // Build the curtain overlay once
+  const curtain = document.createElement('div');
+  curtain.id = 'nav-curtain';
+  curtain.innerHTML = '<span></span><span></span>';
+  curtain.setAttribute('aria-hidden', 'true');
+  curtain.style.cssText = `
+    position: fixed; inset: 0; z-index: 400;
+    display: flex; pointer-events: none;
+  `;
+  curtain.querySelectorAll('span').forEach((s) => {
+    s.style.cssText = `
+      flex: 1; height: 100%;
+      background: linear-gradient(160deg, #1a0a3a, #0d0d1a);
+      transform: scaleY(0); transform-origin: top;
+      transition: transform 0.52s cubic-bezier(0.76, 0, 0.24, 1);
+    `;
+  });
+  curtain.querySelectorAll('span')[1].style.transitionDelay = '0.06s';
+  document.body.appendChild(curtain);
+
+  let isCurtainBusy = false;
+
+  const runCurtainTo = (targetEl) => {
+    if (isCurtainBusy || reducedMotion) {
+      // Fallback: just scroll smoothly
+      if (lenis) lenis.scrollTo(targetEl, { offset: 0, duration: 1.4 });
+      else targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+    isCurtainBusy = true;
+    const spans = curtain.querySelectorAll('span');
+
+    // Phase 1: curtain sweeps DOWN (origin: top → scaleY 0→1)
+    spans.forEach((s) => {
+      s.style.transformOrigin = 'top';
+      s.style.transform = 'scaleY(0)';
+    });
+    // Force reflow
+    curtain.getBoundingClientRect();
+
+    spans.forEach((s) => { s.style.transform = 'scaleY(1)'; });
+
+    // When covered: scroll instantly then sweep UP
+    setTimeout(() => {
+      // Scroll to target (no animation — screen is covered)
+      if (lenis) lenis.scrollTo(targetEl, { immediate: true });
+      else window.scrollTo({ top: targetEl.getBoundingClientRect().top + window.scrollY, behavior: 'instant' });
+
+      // Phase 2: curtain sweeps UP (origin: bottom → scaleY 1→0)
+      setTimeout(() => {
+        spans.forEach((s) => {
+          s.style.transformOrigin = 'bottom';
+          s.style.transform = 'scaleY(0)';
+        });
+        setTimeout(() => { isCurtainBusy = false; }, 600);
+      }, 80);
+    }, 560); // wait for curtain to fully close
+  };
+
+  /* ------------------------------------------------------------------
+     Smooth scroll for in-page links — now uses curtain
   ------------------------------------------------------------------ */
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener('click', (e) => {
@@ -217,9 +308,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const target = document.querySelector(id);
         if (target) {
           e.preventDefault();
-          // Close mobile nav if open
           closeMobileNav();
-          target.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
+          runCurtainTo(target);
         }
       }
     });

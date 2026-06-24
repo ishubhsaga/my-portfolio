@@ -30,7 +30,7 @@
    ============================================================ */
 *, *::before, *::after { box-sizing: border-box; }
 * { margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: auto; -webkit-text-size-adjust: 100%; }
 html, body { height: 100%; }
 
 body {
@@ -809,4 +809,50 @@ img.error { display: none; }
 
   .header-social { display: none; }
   .container { padding: 1.25rem 1rem; }
+}
+
+/* ============================================================
+   21. MOBILE HERO + PHOTO TAGS FIX
+   ============================================================ */
+
+/* Override the tablet block that hid photo tags and broke hero layout */
+@media (max-width: 900px) {
+  .hero {
+    align-items: flex-start;
+    padding-top: calc(var(--header-h) + 1.5rem);
+    padding-bottom: 3rem;
+    min-height: auto;
+  }
+  .hero-inner {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 2rem;
+  }
+  .hero-content { max-width: 100%; width: 100%; }
+  .hero-media { width: 200px; flex-shrink: 0; align-self: center; position: relative; }
+
+  /* Bring back photo tags — smaller and tucked in */
+  .photo-tag {
+    display: inline-flex !important;
+    font-size: 0.68rem;
+    padding: 0.28rem 0.55rem;
+  }
+  .photo-tag--1 { top: -5%; left: -5%; }
+  .photo-tag--2 { top: 42%; right: -8%; }
+  .photo-tag--3 { bottom: -5%; left: -3%; }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding-top: calc(var(--header-h) + 0.75rem);
+    padding-bottom: 2rem;
+  }
+  .hero-inner { gap: 1.2rem; }
+  .hero-title { font-size: clamp(1.8rem, 9vw, 2.4rem) !important; }
+  .hero-media { width: 155px; }
+  .terminal-line { font-size: 0.78rem; }
+  .photo-tag { font-size: 0.62rem; padding: 0.22rem 0.45rem; }
+  .photo-tag--1 { top: -8%; left: -2%; }
+  .photo-tag--2 { top: 40%; right: -4%; }
+  .photo-tag--3 { bottom: -8%; left: 0%; }
 }
